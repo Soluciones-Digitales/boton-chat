@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Bot</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    iframe {
+      height: 404px;
+      width: 360px;
+      border: none;
+    }
+    
+    .open-chat-button {
+      border: none;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      cursor: pointer;
+      padding: 14px;
+      background-color: #0076C7;
+      border-top-left-radius: 50px 50px;
+      border-top-right-radius: 50px 50px;
+      border-bottom-left-radius: 50px 50px;
+      border-bottom-right-radius: 50px 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    .open-chat-button-img {
+      background-image: url('bot.png');
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+    }
+
+    .open-chat-button-text {
+      color: #fff;
+      max-width: 90px;
+      display: none;
+    }
+
+    .chat-popup {
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      z-index: 9;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.6s ease;
+    }
+
+    .chat-popup-active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .chat-header-flex {
+      background-color: #0076C7;
+      height: 4rem;
+      border-top-left-radius: 16px 16px;
+      border-top-right-radius: 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .chat-header-flex-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .chat-header-icon-bot {
+      max-width: 34px;
+      margin-right: 12px;
+    }
+
+    .chat-header-text {
+      color: #fff;
+      font-size: 14px;
+    }
+    
+    .chat-header-minimize-btn {
+      width: 40px;
+      height: 40px;
+      background: url(minimize.png);
+      background-size: 18px;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+
+    .chat-header-close-btn {
+      width: 40px;
+      height: 40px;
+      background: url(close.png);
+      background-size: 15px;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="open-chat-button" id="openButton" onclick="toggleChat()">
+    <div class="open-chat-button-img"></div>
+    <p class="open-chat-button-text" id="openButtonText">¿Cómo podemos ayudarte?</p>
+  </button>
+  
+  <div class="chat-popup" id="myChat">
+    <div class="chat-header-flex">
+      <div class="chat-header-flex-item">
+        <img class="chat-header-icon-bot" src="bot.png" />
+        <p class="chat-header-text">¿Cómo podemos ayudarte?</p>
+      </div>
+      <div>
+        <div class="chat-header-flex-item">
+          <div class="chat-header-minimize-btn" onclick="toggleChat();"></div>
+          <div class="chat-header-close-btn" onclick="toggleChat();"></div>
+        </div>
+      </div>
+    </div>
+    <iframe src="https://chatsocial.telecom.com.ar/c1f3db1f179ddce56f49660ce32cd36dd93e36fd/d49534120fe945fb8724a2967b0591c4/chat"></iframe>
+  </div>
+  
+  <script>
+  function toggleChat() {
+    const myChat = document.getElementById("myChat");
+    myChat.classList.toggle("chat-popup-active");
+  }
+
+  const openBtn = document.getElementById('openButton');
+  const openBtnTxt = document.getElementById('openButtonText');
+  openBtn.addEventListener('mouseover', () => {
+    openBtnTxt.style.display = "block";
+  });
+  openBtn.addEventListener('mouseout', () => {
+    openBtnTxt.style.display = "none";
+  });
+  </script>
+
+</body>
+</html>
