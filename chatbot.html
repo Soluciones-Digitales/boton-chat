@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Bot</title>
   <style>
-    * {
+    .chat-bot-general-style {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    iframe {
+    .chat-bot-pop-up {
       height: 404px;
       width: 360px;
       border: none;
@@ -101,7 +101,7 @@
     .chat-header-minimize-btn {
       width: 36px;
       height: 36px;
-      background: url(minimize.png);
+      background: url(https://cablevisionfibertel--tst2.custhelp.com/euf/assets/themes/standard/images/images-chatbot/minimize.png);
       background-size: 18px;
       background-repeat: no-repeat;
       background-position: center;
@@ -111,7 +111,7 @@
     .chat-header-close-btn {
       width: 36px;
       height: 36px;
-      background: url(close.png);
+      background: url(https://cablevisionfibertel--tst2.custhelp.com/euf/assets/themes/standard/images/images-chatbot/close.png);
       background-size: 15px;
       background-repeat: no-repeat;
       background-position: center;
@@ -120,16 +120,18 @@
   </style>
 </head>
 <body>
-  <button class="open-chat-button" id="openButton" onclick="toggleChat()">
-    <div class="open-chat-button-img"></div>
-    <p class="open-chat-button-text" id="openButtonText">¿Cómo puedo ayudarte?</p>
-  </button>
-  
-  <div class="chat-popup" id="myChat">
-    <div class="chat-header-flex">
-      <div class="chat-header-flex-item">
-        <img class="chat-header-icon-bot" src="bot.png" />
-        <p class="chat-header-text">¿Cómo podemos ayudarte?</p>
+  <span class="chat-bot-general-style">
+
+    <button class="open-chat-button" id="openButton" onclick="toggleChat()">
+      <div class="open-chat-button-img"></div>
+      <p class="open-chat-button-text" id="openButtonText">¿Cómo puedo ayudarte?</p>
+    </button>
+    
+    <div class="chat-popup" id="myChat">
+      <div class="chat-header-flex">
+        <div class="chat-header-flex-item">
+          <img class="chat-header-icon-bot" src="https://cablevisionfibertel--tst2.custhelp.com/euf/assets/themes/standard/images/images-chatbot/bot.png" />
+          <p class="chat-header-text">¿Cómo podemos ayudarte?</p>
       </div>
       <div>
         <div class="chat-header-flex-item">
@@ -138,23 +140,24 @@
         </div>
       </div>
     </div>
-    <iframe src="https://chatsocial.telecom.com.ar/c1f3db1f179ddce56f49660ce32cd36dd93e36fd/d49534120fe945fb8724a2967b0591c4/chat"></iframe>
+    <iframe class="chat-bot-pop-up" src="https://chatsocial.telecom.com.ar/c1f3db1f179ddce56f49660ce32cd36dd93e36fd/d49534120fe945fb8724a2967b0591c4/chat"></iframe>
   </div>
+</span>
   
   <script>
-  function toggleChat() {
-    const myChat = document.getElementById("myChat");
-    myChat.classList.toggle("chat-popup-active");
-  }
-
-  const openBtn = document.getElementById('openButton');
-  const openBtnTxt = document.getElementById('openButtonText');
-  openBtn.addEventListener('mouseover', () => {
-    openBtnTxt.style.display = "block";
-  });
-  openBtn.addEventListener('mouseout', () => {
-    openBtnTxt.style.display = "none";
-  });
+    function toggleChat() {
+      const myChat = document.getElementById("myChat");
+      myChat.classList.toggle("chat-popup-active");
+    }
+    
+    const openBtn = document.getElementById('openButton');
+    const openBtnTxt = document.getElementById('openButtonText');
+    openBtn.addEventListener('mouseover', () => {
+      openBtnTxt.style.display = "block";
+    });
+    openBtn.addEventListener('mouseout', () => {
+      openBtnTxt.style.display = "none";
+    });
   </script>
 
 </body>
