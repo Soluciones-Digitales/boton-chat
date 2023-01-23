@@ -25,7 +25,7 @@
       bottom: 23px;
       right: 28px;
       cursor: pointer;
-      padding: 14px;
+      padding: 10px;
       background-color: #0076C7;
       border-top-left-radius: 50px 50px;
       border-top-right-radius: 50px 50px;
@@ -38,16 +38,22 @@
     .open-chat-button-img {
       background-image: url('bot.png');
       background-size: cover;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
     }
+
+    .open-chat-button:hover .open-chat-button-img{
+      margin: 0 8px;
+    }
+
 
     .open-chat-button-text {
       color: #fff;
       /* max-width: 90px; */
       display: none;
       width: 8em;
-      margin: 0 16px;
+      margin: 0 8px;
+      text-align: initial;
     }
 
     .chat-popup {
@@ -88,11 +94,12 @@
     .chat-header-text {
       color: #fff;
       font-size: 14px;
+      margin: 0 0 0 14px;
     }
     
     .chat-header-minimize-btn {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       background: url(minimize.png);
       background-size: 18px;
       background-repeat: no-repeat;
@@ -101,8 +108,8 @@
     }
 
     .chat-header-close-btn {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       background: url(close.png);
       background-size: 15px;
       background-repeat: no-repeat;
@@ -114,7 +121,7 @@
 <body>
   <button class="open-chat-button" id="openButton" onclick="toggleChat()">
     <div class="open-chat-button-img"></div>
-    <p class="open-chat-button-text" id="openButtonText">¿Cómo podemos ayudarte?</p>
+    <p class="open-chat-button-text" id="openButtonText">¿Cómo puedo ayudarte?</p>
   </button>
   
   <div class="chat-popup" id="myChat">
