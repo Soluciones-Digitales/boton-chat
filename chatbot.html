@@ -121,7 +121,7 @@
       cursor: pointer;
     }
 
-    .button {
+    .buttonChatBot {
 
       position: fixed;
       bottom: 23px;
@@ -140,7 +140,7 @@
       transition: max-width 0.5s;
     }
 
-    .button:hover {
+    .buttonChatBot:hover {
       max-width: 500px;
       cursor: pointer;
     }
@@ -150,13 +150,13 @@
       transition: margin 0.1s;
     }
 
-    .button:hover .imgIconChatBot{
+    .buttonChatBot:hover .imgIconChatBot{
         margin: 0 10px;
         -webkit-transition: margin 0.5s;
         transition: margin 0.1s;  
     }
 
-    .icon {
+    .iconChatBot {
       font-family: "Font Awesome 5 Free";
       font-size: 16px;
       margin:0 0px 0 2px;
@@ -164,10 +164,10 @@
       display: flex;
       align-items: center;
     }
-    .icon img {
+    .iconChatBot .imgIconChatBot {
       max-width: 36px;
     }
-    .text {
+    .chatBottext {
       white-space: break-spaces;
       padding-right: 15px;
       /* margin: 0 8px; */
@@ -182,12 +182,12 @@
 <body>
   <span class="chat-bot-general-style">
 
-    <span class="button" onclick="toggleChat()">
-      <span class="icon">
+    <span class="buttonChatBot" onclick="toggleChat()">
+      <span class="iconChatBot">
         <img class="imgIconChatBot" src="https://cablevisionfibertel--tst2.custhelp.com/euf/assets/themes/standard/images/images-chatbot/bot.png" />
 
       </span>
-      <p class="text">¿Cómo podemos ayudarte?</p>
+      <p class="chatBottext">¿Cómo podemos ayudarte?</p>
     </span>
 
     <!-- <button class="open-chat-button" id="openButton" onclick="toggleChat()">
@@ -195,7 +195,6 @@
       <p class="open-chat-button-text" id="openButtonText">¿Cómo puedo ayudarte?</p>
     </button>
      -->
-
 
     <div class="chat-popup" id="myChat">
       <div class="chat-header-flex">
