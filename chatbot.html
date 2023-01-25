@@ -146,36 +146,50 @@
     }
 
     .imgIconChatBot{
+      margin: 0 1px 0 0;
       -webkit-transition: margin 0.5s;
-      transition: margin 0.1s;
+      transition: margin 0.4s;
+      transition: transform 0.85s ease-in-out;
+
     }
 
+
     .buttonChatBot:hover .imgIconChatBot{
+        transform: rotate(360deg);
         margin: 0 10px;
-        -webkit-transition: margin 0.5s;
+        -webkit-transition: margin 10s;
         transition: margin 0.1s;  
+
     }
 
     .iconChatBot {
       font-family: "Font Awesome 5 Free";
       font-size: 16px;
-      margin:0 0px 0 2px;
+      margin:0 1px 0 2px;
       padding: 0px 8px;
       display: flex;
       align-items: center;
+      transition: transform .7s ease-in-out;
     }
     .iconChatBot .imgIconChatBot {
       max-width: 36px;
     }
-    .chatBottext {
-      white-space: break-spaces;
+    .textChatBot {
       padding-right: 15px;
-      /* margin: 0 8px; */
       text-align: initial;
-      /* padding-right: 15px; */
       width: 145px;
       font-size: 18px;
+      /* white-space: break-spaces; */
+      transition:  white-space 1s;
+      -webkit-transition:  white-space 1s;
     }
+    .buttonChatBot:hover .textChatBot{
+      white-space: break-spaces;
+      transition:  white-space 1s;
+      -webkit-transition:  white-space 1s;
+
+    }
+
 
   </style>
 </head>
@@ -187,7 +201,7 @@
         <img class="imgIconChatBot" src="https://cablevisionfibertel--tst2.custhelp.com/euf/assets/themes/standard/images/images-chatbot/bot.png" />
 
       </span>
-      <p class="chatBottext">¿Cómo podemos ayudarte?</p>
+      <span class="textChatBot">¿Cómo podemos ayudarte?</span>
     </span>
 
     <!-- <button class="open-chat-button" id="openButton" onclick="toggleChat()">
@@ -205,20 +219,29 @@
       <div>
         <div class="chat-header-flex-item">
           <div class="chat-header-minimize-btn" onclick="toggleChat();"></div>
-          <div class="chat-header-close-btn" onclick="toggleChat();"></div>
+          <div class="chat-header-close-btn" onclick="toggleChatAndRefresh();"></div>
         </div>
       </div>
     </div>
-    <iframe class="chat-bot-pop-up" src="https://chatsocial.telecom.com.ar/c1f3db1f179ddce56f49660ce32cd36dd93e36fd/d49534120fe945fb8724a2967b0591c4/chat"></iframe>
+    <iframe class="chat-bot-pop-up" id="chatYoizen" src="https://chatsocial.telecom.com.ar/c1f3db1f179ddce56f49660ce32cd36dd93e36fd/d49534120fe945fb8724a2967b0591c4/chat"></iframe>
   </div>
 </span>
   
   <script>
     function toggleChat() {
+      console.log("minimizaste bot")
       const myChat = document.getElementById("myChat");
       myChat.classList.toggle("chat-popup-active");
     }
-    
+
+    function toggleChatAndRefresh() {
+      console.log("refrescaste bot")
+      var iframe = document.getElementById('chatYoizen');
+      iframe.contentWindow.StartNewConversation()
+      
+      toggleChat()
+      
+    }
   </script>
 
 </body>
